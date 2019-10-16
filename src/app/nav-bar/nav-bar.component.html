@@ -22,7 +22,10 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
-  <div class = "p-2"><a class="text-success" routerLink="login">Login</a></div>
+
+  <div *ngIf="!this.authService.isUserLoggedIn()"  class = "p-2"><a class="text-success" routerLink="login">Login</a></div>
+  <div *ngIf="this.authService.isUserLoggedIn()" class = "p-2"><a class="text-success" routerLink="login">Logout</a></div>
+
   <div class = "p-2"><a class="text-success" routerLink="SignUp">SignUp</a></div>
 
 </nav>

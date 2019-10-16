@@ -10,15 +10,15 @@
           <h5 class="card-title text-center">LOGIN</h5>
           <form class="form-signin">
             <div class="form-label-group">
-              <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
-              <label for="inputUserame">Username or Email address</label>
+              <input type="text" id="userame" class="form-control" placeholder="Username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required autofocus>
+              <label for="userame">Username or Email address</label>
             </div>
 
             <hr>
 
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-              <label for="inputPassword">Password</label>
+              <input type="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
+              <label for="password">Password</label>
             </div>
 
 

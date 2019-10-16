@@ -9,11 +9,13 @@ export class AppService {
   isLoggedIn(bool: boolean)
   {
     sessionStorage.setItem('auth', String(bool));
+
     return bool;
   }
   checklogin()
   {
     const auth = sessionStorage.getItem('auth');
+    console.log(auth);
     return JSON.parse(auth);
   }
 }
