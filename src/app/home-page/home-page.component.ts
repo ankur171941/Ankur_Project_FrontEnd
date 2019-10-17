@@ -18,7 +18,7 @@ info;
     if(!this.serv.checklogin()){
       this.router.navigate(['login']);
     }
-    return this.Service.getBackEn().subscribe((data) => {this.info = data; });
+    this.Service.getBackEn().subscribe((data) => {this.info = data; });
     console.log(this.info);
   }
   getShoes()

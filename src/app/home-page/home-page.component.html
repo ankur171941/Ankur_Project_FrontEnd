@@ -1,25 +1,48 @@
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
 
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" (click)="getClothes()">Clothes</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" (click)="getBooks()">Books</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" (click)="getShoes()">Sports</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" (click)="getShoes()">Electronics</a>
-    </li>
+<!--  <ul class="navbar-nav mr-auto">-->
+<!--    <li class="nav-item active">-->
+<!--      <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link text-warning" href="#" (click)="getClothes()">Clothes</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="#" (click)="getBooks()">Books</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="#" (click)="getShoes()">Sports</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="#" (click)="getShoes()">Electronics</a>-->
+<!--    </li>-->
 
-  </ul>
+<!--  </ul>-->
 
-</div>
+<!--</div>-->
+<nav class="navbar fixed-top text-warning navbar-expand-md navbar-new-bottom">
+  <div class="navbar-collapse collapse pt-2 pt-md-0" id="navbar2">
+
+    <ul class="navbar-nav w-100 justify-content-center px-3">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="getClothes()">Clothes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="getBooks()">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="getShoes()">Sports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="getElectronics()">Electronics</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
 <div class="container text-secondary">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -77,11 +100,11 @@
 
   <div class="col-lg-10 ">
     <div class="row" >
-      <div class="col-lg-3" *ngFor="let inf of info"><div >
-        <div><img src={{inf.url}}></div>
-        <div>{{inf.Brand}}</div>
-        <div>{{inf.Price}}</div>
-      </div>
+      <div class="col-lg-3" *ngFor="let inf of info">
+        <div><img src={{inf.image}}></div>
+        <div>{{inf.name}}</div>
+        <div>{{inf.price}}</div>
+
 
       </div>
 

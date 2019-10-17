@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UsercartService} from '../usercart.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-cart',
@@ -9,18 +10,22 @@ import {UsercartService} from '../usercart.service';
 })
 export class UserCartComponent implements OnInit {
 mypr;
-  constructor(private usr: UsercartService ) { }
+sum;count;
+  checkoutd;
+  constructor(private usr: UsercartService, private router: Router) { }
 
   ngOnInit() {
     this.usr.showcart().subscribe(data => {
       this.mypr = data;
       console.log(data);
     });
+    this.totalchange();
   }
   decrement(abc1) {
     this.usr.decrement(1, abc1).subscribe(data => {
       this.usr.showcart().subscribe(data1 => {
         this.mypr = data1;
+        this.totalchange();
       });
     });
   }
@@ -28,6 +33,7 @@ mypr;
     this.usr.decrement(1, abc2).subscribe(data => {
       this.usr.showcart().subscribe(data2 => {
         this.mypr = data2;
+        this.totalchange();
       });
     });
   }
@@ -36,8 +42,31 @@ mypr;
       this.mypr = data;
       this.usr.showcart().subscribe(data1 => {
         this.mypr = data1;
+        this.totalchange();
       });
     });
   }
+  checkout()
+  {
+    this.usr.checkout().subscribe(data => {
+      this.checkoutd = data;
+
+
+    });
+    this.router.navigate(['OrderHistory']);
+    location.reload();
+    alert('nothing in cart continue shopping');
+  }
+  totalchange()
+  {
+    this.sum = 0;
+    this.count = 0;
+    for (const val of this.mypr)
+    {
+      this.sum += val.itm.price * val.quantity;
+      this.count += 1;
+    }
+  }
+
 
 }

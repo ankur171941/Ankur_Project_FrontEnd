@@ -24,8 +24,12 @@
   </div>
 
   <div *ngIf="!this.authService.isUserLoggedIn()"  class = "p-2"><a class="text-success" routerLink="login">Login</a></div>
-  <div *ngIf="this.authService.isUserLoggedIn()" class = "p-2"><a class="text-success" routerLink="login">Logout</a></div>
+  <div *ngIf="this.authService.isUserLoggedIn()"  class = "p-2"><a class="text-success" routerLink="login">MyProfile</a></div>
+<div *ngIf="this.authService.isUserLoggedIn()"  class = "p-2"><a class="text-success" routerLink="login">Cart</a></div>
+<div *ngIf="this.authService.isUserLoggedIn()"  class = "p-2"><a class="text-success" routerLink="login">Orders</a></div>
 
-  <div class = "p-2"><a class="text-success" routerLink="SignUp">SignUp</a></div>
+  <div *ngIf="this.authService.isUserLoggedIn()" class = "p-2"><a class="text-success" routerLink="login" (click)="logout()">Logout</a></div>
+
+  <div *ngIf="!this.authService.isUserLoggedIn()" class = "p-2"><a class="text-success" routerLink="SignUp">SignUp</a></div>
 
 </nav>

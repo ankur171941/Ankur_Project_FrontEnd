@@ -13,6 +13,7 @@ import {EcommService} from './ecomm.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
+import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CommonModule} from '@angular/common';
     ProductDetailsComponent,
     UserCartComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    OrderhistoryComponent
   ],
   imports: [
     BrowserModule,
