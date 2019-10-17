@@ -1,46 +1,70 @@
-<table border="0" cellspacing="0" cellpadding="0">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th class="text-left">DESCRIPTION</th>
-    <th class="text-right">PRICE</th>
-    <th class="text-right">QUANTITY</th>
-    <th class="text-right">TOTAL</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td class="no">04</td>
-    <td class="text-left"><h3>
-      <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
-        Youtube channel
-      </a>
-    </h3>
-      <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
-        Useful videos
-      </a>
-      to improve your Javascript skills. Subscribe and stay tuned :)
-    </td>
-    <td class="unit">$0.00</td>
-    <td class="qty">100</td>
-    <td class="total">$0.00</td>
-  </tr>
-  <tfooter>
-  <tr>
-    <td colspan="2"></td>
-    <td colspan="2">SUBTOTAL</td>
-    <td>$5,200.00</td>
-  </tr>
-  <tr>
-    <td colspan="2"></td>
-    <td colspan="2">TAX 25%</td>
-    <td>$1,300.00</td>
-  </tr>
-  <tr>
-    <td colspan="2"></td>
-    <td colspan="2">GRAND TOTAL</td>
-    <td>$6,500.00</td>
-  </tr>
-  </tfooter>
-</table>
-<div class="thanks">Thank you!</div>
+<div class="container mb-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col"> </th>
+            <th scope="col">Product</th>
+            <th scope="col">Available</th>
+            <th scope="col" class="text-center">Quantity</th>
+            <th scope="col" class="text-right">Price</th>
+            <th> </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let c of mypr">
+            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+            <td>{{c.name}}</td>
+            <td>In stock</td>
+            <td><input class="form-control" type="text" value="{{c.quantity}}" /></td>
+            <button (click)="increment(c.quantity)">+</button>
+            <button (click)="decrement(c.quantity)">-</button>
+
+            <td class="text-right">{{c.price}}</td>
+            <td class="text-right"><button class="btn btn-sm btn-danger"  (click)="deletion()"><i class="fa fa-trash"></i> </button> </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Sub-Total</td>
+            <td class="text-right">255,90 €</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Shipping</td>
+            <td class="text-right">6,90 €</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong>Total</strong></td>
+            <td class="text-right"><strong>346,90 €</strong></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col mb-2">
+      <div class="row">
+        <div class="col-sm-12  col-md-6">
+          <button class="btn btn-block btn-light" routerLink="/home">Continue Shopping</button>
+        </div>
+        <div class="col-sm-12 col-md-6 text-right">
+          <button class="btn btn-lg btn-block btn-success text-uppercase" (click)="checkout()">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
