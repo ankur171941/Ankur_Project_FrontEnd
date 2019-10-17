@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EcommService} from '../ecomm.service';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {UsercartService} from "../usercart.service";
 
 @Component({
   selector: 'app-product-details',
@@ -10,7 +11,7 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 export class ProductDetailsComponent implements OnInit {
 mypro;
 Prod;
-  constructor(private Service: EcommService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private Service: EcommService, private router: Router, private route: ActivatedRoute,private user: UsercartService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -20,6 +21,7 @@ Prod;
     });
     this.Service.getBackEnd(this.mypro).subscribe((data) => {
       this.Prod = data;
+      console.log(this.Prod);
     });
   }
 

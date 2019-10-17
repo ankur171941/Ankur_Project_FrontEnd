@@ -27,7 +27,7 @@ export class UsercartService {
   deletion(productId) {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
-    return this.client.get('http://localhost:8080/cartcontrol/cart/deleteItem/productId/' + productId,{headers});
+    return this.client.get('http://localhost:8081/cartcontrol/cart/deleteItem/productId/' + productId,{headers});
   }
   checkout()
   {

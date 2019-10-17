@@ -11,7 +11,7 @@ export class HomePageService {
   {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
-    const url = 'http://localhost:8080/api/cat/' + caetgory;
+    const url = 'http://localhost:8081/api/cat/' + caetgory;
     return this.client.get(url, {headers});
   }
 }

@@ -15,6 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { AdditemComponent } from './additem/additem.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     LoginComponent,
     SignUpComponent,
     OrderhistoryComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    AdditemComponent,
+    EditprofileComponent
   ],
   imports: [
     BrowserModule,

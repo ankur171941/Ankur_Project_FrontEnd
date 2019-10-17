@@ -19,7 +19,7 @@ export const Main_Routes: Routes = [
   {  path: 'cart', component: UserCartComponent, },
   {  path: 'profile', component: MyprofileComponent, },
 
-  {  path: 'productDetails/:id/', component: ProductDetailsComponent, }
+  {  path: 'productDetails/:id', component: ProductDetailsComponent, }
 
 
   ];
