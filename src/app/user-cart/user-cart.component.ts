@@ -63,7 +63,7 @@ sum;count;
     this.count = 0;
     for (const val of this.mypr)
     {
-      this.sum += val.itm.price * val.quantity;
+      this.sum += val.items.price * val.quantity;
       this.count += 1;
     }
   }
